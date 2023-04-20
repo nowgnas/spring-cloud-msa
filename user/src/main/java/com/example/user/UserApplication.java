@@ -17,12 +17,12 @@ public class UserApplication {
         SpringApplication.run(UserApplication.class, args);
     }
 
-    @GetMapping("/user/info")
+    @GetMapping("/info")
     public String info(@Value("${server.port}") String port) {
         return "User 서비스의 기본 동작 Port: {" + port + "}";
     }
 
-    @GetMapping("/user/auth")
+    @GetMapping("/auth")
     public String auth(@RequestHeader(value = "token") String token) {
         return "token is " + token;
     }
