@@ -1,0 +1,36 @@
+version: "3"
+services:
+    discovery:
+        build:
+            context: discovery-server/.
+            dockerfile: Dockerfile
+        image: discovery:1
+        ports:
+            - 8761:8761
+    gateway:
+        build:
+            context: gateway/.
+            dockerfile: Dockerfile
+        image: gateway:1
+        depends_on:
+            - discovery
+        ports:
+            - 8000:8000
+    user:
+        build:
+            context: user/.
+            dockerfile: Dockerfile
+        image: user:1
+        depends_on:
+            - discovery
+        ports:
+            - 64412:64412
+    order:
+        build:
+            context: order/.
+            dockerfile: Dockerfile
+        image: order:1
+        depends_on:
+            - discovery
+        ports:
+            - 54412:54412
