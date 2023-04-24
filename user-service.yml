@@ -7,7 +7,7 @@ spring:
 
 jwt:
     token:
-        key: "{chiper}1cc61f978255eb317e1f6b3747ee6b3253a252678066376e8753050c11d6620d5985639ef5f4c0945ad841278d754131"
+        key: "{cipher}1cc61f978255eb317e1f6b3747ee6b3253a252678066376e8753050c11d6620d5985639ef5f4c0945ad841278d754131"
 
 default:
     message: user-service 에서 global profiles 에서 사용할 설정 정보들
