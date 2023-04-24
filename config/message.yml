@@ -1,0 +1,14 @@
+message:
+    owner: config-service's native folder
+    content: :) 안녕하세요 각각의 마이크로서비스에서 사용될 데이터입니다. :)
+
+spring:
+    datasource:
+        url: dbUrl
+        driver: com.h2.Driver
+        username: admin
+        password: password1234
+
+jwt:
+    token:
+        key: my_secret_key

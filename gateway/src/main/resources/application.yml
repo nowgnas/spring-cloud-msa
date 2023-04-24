@@ -24,7 +24,7 @@ spring:
 #            - AddRequestHeader=token, 123456
 #            - AddResponseHeader=authenticated, yes
             - RewritePath=/user/?(?<segment>.*), /$\{segment}
-            - CustomFilter
+
         - id: order-service
           uri: lb://ORDER-SERVICE # ??? ? ??, http://localhost:8000/order ? ???? http://localhost:54412 ? ???
           predicates:
