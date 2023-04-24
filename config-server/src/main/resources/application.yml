@@ -5,11 +5,8 @@ spring:
   application:
     name: config-service
 
-  profiles:
-    active: native
-
   cloud:
     config:
       server:
-        native:
-          search-locations: file://${user.home}/spring-cloud-msa/config
+        git:
+          uri: https://github.com/nowgnas/spring-cloud-msa/tree/main/config/user
