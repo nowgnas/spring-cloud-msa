@@ -9,4 +9,4 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/nowgnas/spring-cloud-msa/tree/main/config/user
+          uri: https://github.com/nowgnas/spring-cloud-msa
