@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +25,7 @@ public class OrderApplication {
 
     @GetMapping("/{userId}/teams")
     public ResponseEntity<String> getTeamByUserId(@PathVariable("userId") Long userId) {
+        System.out.println("order user id teams ");
         return ResponseEntity.ok("hello");
     }
 }

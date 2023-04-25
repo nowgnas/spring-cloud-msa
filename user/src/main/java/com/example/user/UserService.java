@@ -7,8 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import javax.ws.rs.core.Response;
-
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -16,7 +14,8 @@ public class UserService {
 
     public String getData() {
         // Team team = GET team-service/{userId}/teams
-        String url = String.format("http://order-service/order/%s/teams", 1);
+        String url = String.format("http://localhost:8000/order/%s/teams", 1);
+        System.out.println("request url is : " + url);
         ResponseEntity<String> response = restTemplate.exchange(
                 url,
                 HttpMethod.GET,

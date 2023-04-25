@@ -12,7 +12,9 @@ public class UserController {
 
     @GetMapping("/data")
     public ResponseEntity<String> getData() {
+        System.out.println("user data controller ");
         String data = userService.getData();
+        System.out.println(data + "slfjslk");
         return ResponseEntity.ok(data);
     }
 }
