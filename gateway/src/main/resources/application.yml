@@ -11,19 +11,24 @@ eureka:
 spring:
   application:
     name: gateway-service
+
   cloud:
     gateway:
       routes:
         - id: user-service
-          uri: lb://USER-SERVICE
+          uri: lb://USER-SERVICE # ???? ??, http://localhost:8000/user ? ???? http://localhost:64412 ? ???
           predicates:
-            - Path=/user/**
+            - Path=/user/** # ?? gateway ??? /user/**? ???? ?? user-service? ?????? ??
+            - Method=GET
           filters:
+#            - AddRequestHeader=token, 123456
+#            - AddResponseHeader=authenticated, yes
             - RewritePath=/user/?(?<segment>.*), /$\{segment}
 
-        - id: team-service
-          uri: lb://TEAM-SERVICE
+        - id: order-service
+          uri: lb://ORDER-SERVICE # ??? ? ??, http://localhost:8000/order ? ???? http://localhost:54412 ? ???
           predicates:
-            - Path=/team/**
+            - Path=/order/** # ?? gateway ??? /order/**? ???? ?? order-service? ?????? ??
+            - Method=GET
           filters:
-            - RewritePath=/team/?(?<segment>.*), /$\{segment}
+            - RewritePath=/order/?(?<segment>.*), /$\{segment}

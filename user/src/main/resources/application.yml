@@ -4,17 +4,6 @@ server:
 spring:
   application:
     name: user-service
-  datasource:
-    driver: org.h2.Driver
-    url: jdbc:h2:tcp://localhost:8081/test
-    username: sa
-  h2:
-    password:
-    console:
-    enabled: true
-    settings:
-      web-allow-others: true
-    path: /h2-console
 
 
 eureka:
