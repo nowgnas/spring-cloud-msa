@@ -24,8 +24,9 @@ public class OrderApplication {
     }
 
     @GetMapping("/{userId}/teams")
-    public ResponseEntity<String> getTeamByUserId(@PathVariable("userId") Long userId) {
+    public ResponseEntity<TeamResponseData> getTeamByUserId(@PathVariable("userId") Long userId) {
         System.out.println("order user id teams ");
-        return ResponseEntity.ok("hello");
+        TeamResponseData hello = TeamResponseData.builder().name("hello").build();
+        return ResponseEntity.ok(hello);
     }
 }

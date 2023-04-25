@@ -11,9 +11,9 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/data")
-    public ResponseEntity<String> getData() {
+    public ResponseEntity<TeamResponseData> getData() {
         System.out.println("user data controller ");
-        String data = userService.getData();
+        TeamResponseData data = userService.getData();
         System.out.println(data + "slfjslk");
         return ResponseEntity.ok(data);
     }

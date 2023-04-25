@@ -1,4 +1,4 @@
-package com.example.order;
+package com.example.user;
 
 import lombok.Builder;
 import lombok.Data;

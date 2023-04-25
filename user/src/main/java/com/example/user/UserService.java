@@ -12,15 +12,15 @@ import org.springframework.web.client.RestTemplate;
 public class UserService {
     private final RestTemplate restTemplate;
 
-    public String getData() {
+    public TeamResponseData getData() {
         // Team team = GET team-service/{userId}/teams
-        String url = String.format("http://localhost:8000/order/%s/teams", 1);
+        String url = String.format("http://order-service/order/%s/teams", 1);
         System.out.println("request url is : " + url);
-        ResponseEntity<String> response = restTemplate.exchange(
+        ResponseEntity<TeamResponseData> response = restTemplate.exchange(
                 url,
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<String>() {
+                new ParameterizedTypeReference<TeamResponseData>() {
                 }
         );
         return response.getBody();
