@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-@EnableEurekaClient
 public class UserApplication {
 
     public static void main(String[] args) {
@@ -41,7 +40,7 @@ public class UserApplication {
                            @Value("${spring.datasource.url}") String url,
                            @Value("${spring.datasource.username}") String username,
                            @Value("${spring.datasource.password}") String password,
-                           @Value("${token.key}") String tokenKey) {
+                           @Value("${jwt.token.key}") String tokenKey) {
         return "driver: " + driver + "\n"
                 + "url: " + url + "\n"
                 + "username: " + username + "\n"
