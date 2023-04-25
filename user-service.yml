@@ -1,15 +1,3 @@
-spring:
-    datasource:
-        driver: org.h2.Driver
-        url: jdbc:h2:tcp://localhost:1521/test
-        username: sa
-        password:
-    h2:
-        console:
-        enabled: true
-        settings:
-            web-allow-others: true
-        path: /h2-console
 jwt:
     token:
         key: "{cipher}1cc61f978255eb317e1f6b3747ee6b3253a252678066376e8753050c11d6620d5985639ef5f4c0945ad841278d754131"
