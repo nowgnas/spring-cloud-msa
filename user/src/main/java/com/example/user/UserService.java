@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class UserService {
     private final RestTemplate restTemplate;
+    private final TeamServiceClient teamServiceClient;
 
     public TeamResponseData getData() {
         // Team team = GET team-service/{userId}/teams
@@ -26,5 +27,7 @@ public class UserService {
         return response.getBody();
     }
 
-
+    public TeamResponseData getTeam() {
+        return teamServiceClient.getTeam(1L);
+    }
 }

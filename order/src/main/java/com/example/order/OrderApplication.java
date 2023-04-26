@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableDiscoveryClient
 @RestController
+@EnableFeignClients
 public class OrderApplication {
 
     public static void main(String[] args) {
@@ -26,7 +28,9 @@ public class OrderApplication {
     @GetMapping("/{userId}/teams")
     public ResponseEntity<TeamResponseData> getTeamByUserId(@PathVariable("userId") Long userId) {
         System.out.println("order user id teams ");
-        TeamResponseData hello = TeamResponseData.builder().name("hello").build();
+        TeamResponseData hello = new TeamResponseData();
+        hello.setName("hello");
+        System.out.println(hello);
         return ResponseEntity.ok(hello);
     }
 }

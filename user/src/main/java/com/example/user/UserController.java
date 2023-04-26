@@ -17,4 +17,11 @@ public class UserController {
         System.out.println(data + "slfjslk");
         return ResponseEntity.ok(data);
     }
+
+    @GetMapping("/team")
+    public ResponseEntity<String> getTeam(){
+        String name = userService.getTeam().getName();
+        System.out.println(name);
+        return ResponseEntity.ok(name);
+    }
 }
