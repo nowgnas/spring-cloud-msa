@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo "port: "
-read port 
+echo "file path: "
+read path
 
-echo ""
+echo "tag name: "
+read tag
+
+docker build -f ${path} -t ${tag} .

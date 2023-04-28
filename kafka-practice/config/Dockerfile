@@ -1,10 +1,10 @@
 FROM adoptopenjdk:11-hotspot AS builder
 
-COPY gradlew .
-COPY gradle gradle
-COPY build.gradle .
-COPY settings.gradle .
-COPY src src
+COPY config/gradlew .
+COPY config/gradle gradle
+COPY config/build.gradle .
+COPY config/settings.gradle .
+COPY config/src src
 RUN chmod +x ./gradlew
 RUN ./gradlew clean bootJar
 
