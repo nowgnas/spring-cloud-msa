@@ -10,3 +10,4 @@ spring:
       server:
         git:
           uri: https://github.com/nowgnas/spring-cloud-msa
+          search-paths: kafka-practice/env
