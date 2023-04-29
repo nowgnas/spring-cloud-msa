@@ -9,3 +9,6 @@ eureka:
   client:
     register-with-eureka: false # 3번
     fetch-registry: false  # 4번
+  instance:
+    leaseExpirationDurationInSeconds: 90
+    leaseRenewalIntervalInSeconds: 30
