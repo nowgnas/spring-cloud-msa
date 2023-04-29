@@ -20,4 +20,4 @@ eureka:
         service-url:
             defaultZone: http://localhost:8761/eureka
 dev:
-    message: user dev message change4
+    message: user dev message change using rabbitmq
