@@ -21,3 +21,6 @@ eureka:
         fetch-registry: true
         service-url:
             defaultZone: http://localhost:8761/eureka
+
+kafka:
+    host: host.docker.internal:9092
