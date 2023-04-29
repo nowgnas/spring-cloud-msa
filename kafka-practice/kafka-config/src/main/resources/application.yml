@@ -11,3 +11,8 @@ spring:
         git:
           uri: https://github.com/nowgnas/spring-cloud-msa.git
           search-paths: kafka-practice/env
+    rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
