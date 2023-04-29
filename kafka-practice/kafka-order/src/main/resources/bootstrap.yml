@@ -4,3 +4,8 @@ spring:
       uri: http://localhost:8888
       name: order-service
       profile: dev
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, busrefresh
