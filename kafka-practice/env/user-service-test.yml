@@ -1,9 +1,0 @@
-spring:
-    datasource:
-        driver: com.mysql.jdbc.Driver
-        url: dbUrl
-        username: test
-        password: test
-
-default:
-    message: test profiles 에서 사용할 설정 정보들
