@@ -5,7 +5,7 @@ spring:
     application:
         name: user-service
     rabbitmq:
-        host: host.docker.internal
+        host: localhost
         port: 5672
         username: guest
         password: guest
@@ -20,6 +20,6 @@ eureka:
         register-with-eureka: true
         fetch-registry: true
         service-url:
-            defaultZone: http://host.docker.internal:8761/eureka
+            defaultZone: http://localhost:8761/eureka
 dev:
     message: user dev message change using rabbitmq
