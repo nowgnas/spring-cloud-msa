@@ -9,6 +9,14 @@ spring:
         password: guest
     application:
         name: order-service
+    kafka:
+        consumer:
+        bootstrapServers: 172.17.0.2:9092
+        group-id: user
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        auto-offset-reset: earliest
+        enable-auto-commit: true
 
 eureka:
     instance:
