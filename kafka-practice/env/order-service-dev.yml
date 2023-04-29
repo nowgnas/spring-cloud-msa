@@ -13,6 +13,8 @@ spring:
 eureka:
     instance:
         instance-id: order-microservice-instance
+        leaseExpirationDurationInSeconds: 90
+        leaseRenewalIntervalInSeconds: 30
 
     client:
         register-with-eureka: true
