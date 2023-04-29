@@ -1,2 +1,4 @@
 prod:
     message: prod message
+server:
+    port: 74412
