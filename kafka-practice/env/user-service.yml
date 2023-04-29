@@ -1,13 +1,12 @@
 spring:
     datasource:
-        url: jdbc:mysql://localhost:3306/kafka?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf8
-        username: root
-        password: 1234
-        driver-class-name: com.mysql.cj.jdbc.Driver
-    jpa:
-        hibernate:
-            ddl-auto: none
-        properties:
-            hibernate:
-                format_sql: true
-                default_batch_fetch_size: 100
+        driver: com.h2.Driver
+        url: dbUrl
+        username: admin
+        password: admin
+
+token:
+    key: my_token_secret_key
+
+default:
+    message: user-service 에서 global profiles 에서 사용할 설정 정보들
