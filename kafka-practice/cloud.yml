@@ -8,6 +8,8 @@ services:
         container_name: discovery
         ports:
             - 8761:8761
+        networks:
+            - cloud
     config:
         build:
             context: .
@@ -17,6 +19,8 @@ services:
         container_name: config
         ports:
             - 8888:8888
+        networks:
+            - cloud
     gateway:
         build:
             context: .
@@ -26,6 +30,8 @@ services:
         container_name: gateway
         ports:
             - 8000:8000
+        networks:
+            - cloud
     user:
         build:
             context: .
@@ -35,6 +41,8 @@ services:
         container_name: user
         ports:
             - 64412:64412
+        networks:
+            - cloud
     order:
         build:
             context: .
@@ -44,3 +52,9 @@ services:
         container_name: order
         ports:
             - 54412:54412
+        networks:
+            - cloud
+networks:
+    cloud:
+        external:
+            name: cloud

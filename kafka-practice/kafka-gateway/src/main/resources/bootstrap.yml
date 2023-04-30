@@ -1,3 +1,9 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: gateway-service
+      profile: dev
 management:
   endpoints:
     web:
