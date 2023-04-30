@@ -1,7 +1,7 @@
 spring:
   cloud:
     config:
-      uri: http://host.docker.internal:8888
+      uri: http://localhost:8888
       name: order-service
       profile: dev
 management:

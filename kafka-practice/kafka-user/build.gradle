@@ -33,6 +33,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-bus-amqp
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-bus-amqp', version: '2.2.4.RELEASE'
+    implementation 'org.springframework.kafka:spring-kafka'
+
 }
 
 dependencyManagement {

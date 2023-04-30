@@ -1,9 +1,10 @@
 spring:
   cloud:
     config:
-      uri: http://host.docker.internal:8888
+      uri: http://localhost:8888
       name: user-service
       profile: dev
+
 management:
   endpoints:
     web:

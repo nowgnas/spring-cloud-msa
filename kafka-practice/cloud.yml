@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+    discovery:
+        build:
+            context: .
+            dockerfile: ./kafka-discovery/Dockerfile
+        container_name: discovery
+        ports:
+            - 8761:8761
+    config:
+        build:
+            context: .
+            dockerfile: ./kafka-config/Dockerfile
+        depends_on:
+            - discovery
+        container_name: config
+        ports:
+            - 8888:8888
+    gateway:
+        build:
+            context: .
+            dockerfile: ./kafka-gateway/Dockerfile
+        depends_on:
+            - discovery
+        container_name: gateway
+        ports:
+            - 8000:8000
+    user:
+        build:
+            context: .
+            dockerfile: ./kafka-user/Dockerfile
+        depends_on:
+            - discovery
+        container_name: user
+        ports:
+            - 64412:64412
+    order:
+        build:
+            context: .
+            dockerfile: ./kafka-order/Dockerfile
+        depends_on:
+            - discovery
+        container_name: order
+        ports:
+            - 54412:54412
