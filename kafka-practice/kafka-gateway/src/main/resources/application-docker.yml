@@ -1,0 +1,35 @@
+server:
+    port: 8000
+
+eureka:
+    client:
+        fetch-registry: true
+        register-with-eureka: true
+        service-url:
+            defaultZone: http://host.docker.internal:8761/eureka
+    instance:
+        leaseExpirationDurationInSeconds: 90
+        leaseRenewalIntervalInSeconds: 30
+spring:
+    rabbitmq:
+        host: host.docker.internal
+        port: 5672
+        username: guest
+        password: guest
+    application:
+        name: gateway-service
+    cloud:
+        gateway:
+            routes:
+                - id: user-service
+                  uri: lb://USER-SERVICE
+                  predicates:
+                      - Path=/user/**
+                  filters:
+                      - RewritePath=/user/?(?<segment>.*), /$\{segment}
+                - id: order-service
+                  uri: lb://ORDER-SERVICE
+                  predicates:
+                      - Path=/order/**
+                  filters:
+                      - RewritePath=/order/?(?<segment>.*), /$\{segment}

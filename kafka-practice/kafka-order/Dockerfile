@@ -11,4 +11,6 @@ RUN ./gradlew clean bootJar
 FROM adoptopenjdk:11-hotspot
 WORKDIR /app
 COPY --from=builder /app/build/libs/*.jar app.jar
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+ENTRYPOINT ["java", "-jar", \
+        "-Dspring.profiles.active=docker", \
+        "/app/app.jar"]

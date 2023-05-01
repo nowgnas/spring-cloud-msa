@@ -26,7 +26,7 @@ services:
             context: .
             dockerfile: ./kafka-gateway/Dockerfile
         depends_on:
-            - discovery
+            - config
         container_name: gateway
         ports:
             - 8000:8000
@@ -37,10 +37,10 @@ services:
             context: .
             dockerfile: ./kafka-user/Dockerfile
         depends_on:
-            - discovery
+            - gateway
         container_name: user
         ports:
-            - 64412:64412
+            - 54412:54412
         networks:
             - cloud
     order:
@@ -48,10 +48,10 @@ services:
             context: .
             dockerfile: ./kafka-order/Dockerfile
         depends_on:
-            - discovery
+            - gateway
         container_name: order
         ports:
-            - 54412:54412
+            - 44412:44412
         networks:
             - cloud
 networks:

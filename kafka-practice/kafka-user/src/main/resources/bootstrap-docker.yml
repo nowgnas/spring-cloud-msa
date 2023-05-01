@@ -1,0 +1,14 @@
+spring:
+    cloud:
+        config:
+            uri: http://host.docker.internal:8888
+            name: user-service
+            profile: docker
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: refresh, busrefresh, health
+server:
+    port: 54412

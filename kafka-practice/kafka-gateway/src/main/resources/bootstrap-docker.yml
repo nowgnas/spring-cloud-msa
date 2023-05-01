@@ -1,0 +1,11 @@
+spring:
+    cloud:
+        config:
+            uri: http://host.docker.internal:8888
+            name: gateway-service
+            profile: docker
+management:
+    endpoints:
+        web:
+            exposure:
+                include: refresh, busrefresh
