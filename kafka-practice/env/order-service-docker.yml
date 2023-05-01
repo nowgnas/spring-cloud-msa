@@ -1,0 +1,31 @@
+server:
+    port: 44412
+
+spring:
+    rabbitmq:
+        host: host.docker.internal
+        port: 5672
+        username: guest
+        password: guest
+    application:
+        name: order-service
+    kafka:
+        bootstrapServers: host.docker.internal:9092
+        consumer:
+            group-id: user
+            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            auto-offset-reset: earliest
+            enable-auto-commit: true
+
+eureka:
+    instance:
+        instance-id: order-microservice-instance
+        leaseExpirationDurationInSeconds: 90
+        leaseRenewalIntervalInSeconds: 30
+
+    client:
+        register-with-eureka: true
+        fetch-registry: true
+        service-url:
+            defaultZone: http://host.docker.internal:8761/eureka

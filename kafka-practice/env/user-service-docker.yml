@@ -1,0 +1,32 @@
+server:
+    port: 54412
+
+spring:
+    application:
+        name: user-service
+    rabbitmq:
+        host: host.docker.internal
+        port: 5672
+        username: guest
+        password: guest
+    kafka:
+        bootstrapServers: host.docker.internal:9092
+        producer:
+            retries: 0
+            acks: 1
+            key-serializer: org.apache.kafka.common.serialization.StringSerializer
+            value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+eureka:
+    instance:
+        instance-id: user-microservice-instance
+        leaseExpirationDurationInSeconds: 90
+        leaseRenewalIntervalInSeconds: 30
+
+    client:
+        register-with-eureka: true
+        fetch-registry: true
+        service-url:
+            defaultZone: http://host.docker.internal:8761/eureka
+dev:
+    message: user dev message change using rabbitmq
